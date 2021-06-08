@@ -35,7 +35,7 @@
   (let* ((light-theme 'doom-solarized-light)
          (dark-theme 'doom-ayu-mirage)
          (start-time-light-theme 6)
-         (end-time-light-theme 11)
+         (end-time-light-theme 10)
          (hour (string-to-number (substring (current-time-string) 11 13)))
          (next-theme (if (member hour (number-sequence start-time-light-theme end-time-light-theme))
                          light-theme dark-theme)))
@@ -52,10 +52,10 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-;; (setq display-line-numbers-type t)
-(add-hook! 'evil-normal-state-entry-hook (setq display-line-numbers 'relative))
-(add-hook! 'evil-insert-state-entry-hook (setq display-line-numbers t))
-
+;;(setq display-line-numbers-type t)
+;;(add-hook! 'evil-normal-state-entry-hook (setq display-line-numbers 'relative))
+;;(add-hook! 'evil-insert-state-entry-hook (setq display-line-numbers t))
+(setq display-line-numbers-type 'relative)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
