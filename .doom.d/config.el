@@ -53,9 +53,28 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 ;;(setq display-line-numbers-type t)
-;;(add-hook! 'evil-normal-state-entry-hook (setq display-line-numbers 'relative))
-;;(add-hook! 'evil-insert-state-entry-hook (setq display-line-numbers t))
-(setq display-line-numbers-type 'relative)
+;; (setq display-line-numbers-type 'relative)
+(setq-default display-line-numbers 'relative)
+
+(defun baal-display-lines-relative ()
+  "If `display-line-numbers' is non-nil, switch to relative."
+ (when display-line-numbers
+    (setq-local display-line-numbers 'relative)))
+
+(defun baal-display-lines-absolute ()
+  "If `display-line-numbers' is non-nil, switch to absolute."
+  (when display-line-numbers
+    (setq-local display-line-numbers t)))
+
+(add-hook 'evil-insert-state-entry-hook #'baal-display-lines-absolute)
+(add-hook 'evil-normal-state-entry-hook #'baal-display-lines-relative)
+
+(setq-default display-line-numbers nil)
+
+(defun enable-display-line-numbers ()
+  (setq-local display-line-numbers 'relative))
+
+(add-hook 'prog-mode-hook #'enable-display-line-numbers)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
