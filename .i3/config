@@ -147,7 +147,7 @@ set $ws2 2:2 
 set $ws3 3:3 
 set $ws4 4:4 
 set $ws5 5:5 
-set $ws6 6
+set $ws6 6:6 ♫
 set $ws7 7
 set $ws8 8
 
@@ -200,6 +200,9 @@ assign [class="Gnome-terminal"] $ws4
 
 # Tools
 assign [title="gitkraken"] $ws5
+
+# Music. Spotify needs for_window instead of assign for some reason...
+for_window [class="Spotify"] move to workspace $ws6
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
