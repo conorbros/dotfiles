@@ -16,7 +16,7 @@
 ;; + `doom-variable-pitch-font'
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
-(setq doom-font (font-spec :family "Hack" :size 16 )
+(setq doom-font (font-spec :family "Hack" :size 17 )
       doom-variable-pitch-font (font-spec :family "Hack") ; inherits `doom-font''s :size
       doom-unicode-font (font-spec :family "Hack" :size 16)
       doom-big-font (font-spec :family "Hack" :size 19))
@@ -92,3 +92,5 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+(require 'treemacs-all-the-icons)
+(treemacs-load-theme "all-the-icons")
