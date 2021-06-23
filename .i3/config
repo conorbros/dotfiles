@@ -197,6 +197,7 @@ assign [class="Emacs"] $ws3
 
 # Terminals
 assign [class="Gnome-terminal"] $ws4
+assign [class="Alacritty"] $ws4
 
 # Tools
 assign [title="gitkraken"] $ws5
