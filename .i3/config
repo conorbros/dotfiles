@@ -27,7 +27,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -200,7 +200,7 @@ assign [class="Gnome-terminal"] $ws4
 assign [class="Alacritty"] $ws4
 
 # Tools
-assign [title="gitkraken"] $ws5
+assign [title="GitKraken"] $ws5
 
 # Music. Spotify needs for_window instead of assign for some reason...
 for_window [class="Spotify"] move to workspace $ws6
