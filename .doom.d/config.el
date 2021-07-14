@@ -93,4 +93,4 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 (require 'treemacs-all-the-icons)
-(treemacs-load-theme "all-the-icons")
+(setq doom-themes-treemacs-theme "all-the-icons")
