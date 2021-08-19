@@ -27,17 +27,13 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# quick search
-bindsym $mod+c exec --no-startup-id ~/.i3/search.sh
-
 # start program launcher
-#bindsym $mod+d exec --no-startup-id dmenu_recency
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='rofi -dmenu -i'
+bindsym $mod+d exec --no-startup-id dmenu_recency
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -60,9 +56,8 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F2 exec google-chrome-stable
+bindsym $mod+F2 exec palemoon
 bindsym $mod+F3 exec pcmanfm
-bindsym $mod+F4 exec emacs
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec terminal -e 'mocp'
@@ -72,16 +67,16 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-#bindsym $mod+Shift+ exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -90,10 +85,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -107,7 +102,7 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+g split h;exec notify-send 'tile horizontally'
+bindsym $mod+h split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
 bindsym $mod+q split toggle
 
@@ -146,12 +141,12 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:1 
-set $ws2 2:2 
-set $ws3 3:3 
-set $ws4 4:4 
-set $ws5 5:5 
-set $ws6 6:6 ♫
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
 set $ws7 7
 set $ws8 8
 
@@ -186,29 +181,10 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # Open applications on specific workspaces
-
-# Social
-assign [class="Telegram"] $ws1
-assign [title="Discord"] $ws1
-
-# Web
-assign [class="Google-chrome"] $ws2
-assign [class="Brave"] $ws2
-assign [Title="Firefox"] $ws2
-
-# Editing
-assign [class="code"] $ws3
-assign [class="Emacs"] $ws3
-
-# Terminals
-assign [class="Gnome-terminal"] $ws4
-assign [class="Alacritty"] $ws4
-
-# Tools
-assign [title="GitKraken"] $ws5
-
-# Music. Spotify needs for_window instead of assign for some reason...
-for_window [class="Spotify"] move to workspace $ws6
+# assign [class="Thunderbird"] $ws1
+# assign [class="Pale moon"] $ws2
+# assign [class="Pcmanfm"] $ws3
+# assign [class="Skype"] $ws5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -305,7 +281,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-#exec --no-startup-id start_conky_maia
+exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -363,11 +339,11 @@ bar {
         separator  #454947
 
 #                      border  backgr. text
-        focused_workspace  #F9FAF9 #1676a0 #EEE8D5
+        focused_workspace  #F9FAF9 #16a085 #292F34
         active_workspace   #595B5B #353836 #FDF6E3
         inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #1676a0 #2C2C2C #F9FAF9
-        urgent_workspace   #1676a0 #FDF6E3 #E5201D
+        binding_mode       #16a085 #2C2C2C #F9FAF9
+        urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
 }
 
@@ -376,10 +352,10 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80c6ff #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1a8bbc #454948
-  client.unfocused        #2F3D44 #2F3D44 #1a8bbc #454948
-  client.urgent           #CB4B16 #FDF6E3 #1a8bbc #268BD2
+  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
   client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
   client.background       #2B2C2B
