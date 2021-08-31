@@ -8,3 +8,4 @@ alias doom='$HOME/.emacs.d/bin/doom'
 export PATH="$HOME/.cargo/bin:$PATH"
 alias clippy-dirty="$HOME/scripts/clippy-dirty"
 alias ls='lsd'
+alias cat='bat'
