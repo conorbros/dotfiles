@@ -16,10 +16,11 @@
 ;; + `doom-variable-pitch-font'
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
-(setq doom-font (font-spec :family "Hack" :size 17 )
-      doom-variable-pitch-font (font-spec :family "Hack") ; inherits `doom-font''s :size
-      doom-unicode-font (font-spec :family "Hack" :size 16)
-      doom-big-font (font-spec :family "Hack" :size 19))
+(setq doom-font (font-spec :family "Hack" :size 15 )
+      doom-variable-pitch-font (font-spec :family "Hack")) ; inherits `doom-font''s :size
+
+      ;;doom-unicode-font (font-spec :family "Hack" :size 16)
+      ;;doom-big-font (font-spec :family "Hack" :size 19))
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
@@ -94,3 +95,6 @@
 ;; they are implemented.
 (require 'treemacs-all-the-icons)
 (setq doom-themes-treemacs-theme "all-the-icons")
+
+
+(require 'toml-mode)
