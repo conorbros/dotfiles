@@ -16,7 +16,7 @@
 ;; + `doom-variable-pitch-font'
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
-(setq doom-font (font-spec :family "Hack" :size 15 )
+(setq doom-font (font-spec :family "Hack" :size 16 )
       doom-variable-pitch-font (font-spec :family "Hack")) ; inherits `doom-font''s :size
 
       ;;doom-unicode-font (font-spec :family "Hack" :size 16)
@@ -30,19 +30,19 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;; (setq doom-theme 'doom-ayu-mirage)
+;;(setq doom-theme 'doom-ayu-mirage)
 
 (defun synchronize-theme ()
-  (let* ((light-theme 'doom-solarized-light)
-         (dark-theme 'doom-ayu-mirage)
+  (let* ((light-theme 'doom-gruvbox)
+          (dark-theme 'doom-ayu-mirage)
          (start-time-light-theme 6)
-         (end-time-light-theme 9)
+          (end-time-light-theme 9)
          (hour (string-to-number (substring (current-time-string) 11 13)))
-         (next-theme (if (member hour (number-sequence start-time-light-theme end-time-light-theme))
-                         light-theme dark-theme)))
-    (when (not (equal doom-theme next-theme))
-      (setq doom-theme next-theme)
-      (load-theme next-theme))))
+          (next-theme (if (member hour (number-sequence start-time-light-theme end-time-light-theme))
+                          light-theme dark-theme)))
+     (when (not (equal doom-theme next-theme))
+       (setq doom-theme next-theme)
+       (load-theme next-theme))))
 
 (run-with-timer 0 900 'synchronize-theme)
 
@@ -77,6 +77,11 @@
 
 (add-hook 'prog-mode-hook #'enable-display-line-numbers)
 
+(require 'treemacs-all-the-icons)
+(setq doom-themes-treemacs-theme "all-the-icons")
+
+
+(require 'toml-mode)
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -93,8 +98,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(require 'treemacs-all-the-icons)
-(setq doom-themes-treemacs-theme "all-the-icons")
-
-
-(require 'toml-mode)
