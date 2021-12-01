@@ -30,21 +30,21 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;;(setq doom-theme 'doom-ayu-mirage)
+(setq doom-theme 'doom-ayu-mirage)
 
-(defun synchronize-theme ()
-  (let* ((light-theme 'doom-gruvbox)
-          (dark-theme 'doom-ayu-mirage)
-         (start-time-light-theme 6)
-          (end-time-light-theme 9)
-         (hour (string-to-number (substring (current-time-string) 11 13)))
-          (next-theme (if (member hour (number-sequence start-time-light-theme end-time-light-theme))
-                          light-theme dark-theme)))
-     (when (not (equal doom-theme next-theme))
-       (setq doom-theme next-theme)
-       (load-theme next-theme))))
+;; (defun synchronize-theme ()
+;;   (let* ((light-theme 'doom-gruvbox)
+;;           (dark-theme 'doom-ayu-mirage)
+;;          (start-time-light-theme 6)
+;;           (end-time-light-theme 9)
+;;          (hour (string-to-number (substring (current-time-string) 11 13)))
+;;           (next-theme (if (member hour (number-sequence start-time-light-theme end-time-light-theme))
+;;                           light-theme dark-theme)))
+;;      (when (not (equal doom-theme next-theme))
+;;        (setq doom-theme next-theme)
+;;        (load-theme next-theme))))
 
-(run-with-timer 0 900 'synchronize-theme)
+;; (run-with-timer 0 900 'synchronize-theme)
 
 
 ;; If you use `org' and don't want your org files in the default location below,
