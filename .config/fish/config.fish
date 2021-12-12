@@ -19,3 +19,5 @@ alias cargo-all-checks='cargo clippy --all-targets --locked --no-default-feature
 alias cargo-clippy-fmt='cargo clippy --all-targets --locked --no-default-features -- -D warnings && cargo build --all-targets && cargo fmt --all' 
 alias docker-rmi-untagged='docker rmi (docker images -a|grep "<none>"|awk \'$1=="<none>" {print $3}\') -f'
 alias cargo-update-bins='cargo install (cargo install --list | egrep \'^[a-z0-9_-]+ v[0-9.]+:$\' | cut -f1 -d\' \')'
+
+alias update-system='rustup update && pacman -Syyu && yay -Syyu && doom upgrade && cargo-update-bins'
