@@ -16,8 +16,8 @@
 ;; + `doom-variable-pitch-font'
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
-(setq doom-font (font-spec :family "Hack" :size 16 )
-      doom-variable-pitch-font (font-spec :family "Hack" :size 16)) ; inherits `doom-font''s :size
+(setq doom-font (font-spec :family "Hack" :size 18 )
+      doom-variable-pitch-font (font-spec :family "Hack" :size 18)) ; inherits `doom-font''s :size
 
       ;;doom-unicode-font (font-spec :family "Hack" :size 16)
       ;;doom-big-font (font-spec :family "Hack" :size 19))
