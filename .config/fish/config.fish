@@ -22,3 +22,7 @@ alias cargo-update-bins='cargo install (cargo install --list | egrep \'^[a-z0-9_
 alias cargo-clean-all='find . -name Cargo.toml -type f -execdir cargo clean \;'
 
 alias update-system='rustup update && pacman -Syyu && yay -Syyu && doom upgrade && cargo-update-bins'
+
+# openssl build stuff
+export OPENSSL_LIB_DIR="/usr/lib/openssl-1.0"
+export OPENSSL_INCLUDE_DIR="/usr/include/openssl-1.0"
