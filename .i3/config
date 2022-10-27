@@ -192,6 +192,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 assign [class="Telegram"] $ws1
 assign [title="Discord"] $ws1
 assign [class="Slack"] $ws1
+assign [class="zoom"] $ws1
 
 # Web
 assign [class="Google-chrome"] $ws2
@@ -309,7 +310,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 #exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 60 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 

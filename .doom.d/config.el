@@ -98,3 +98,12 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+
+(setq racer-rust-src-path
+      (let* ((sysroot (string-trim
+                       (shell-command-to-string "rustc --print sysroot")))
+             (lib-path (concat sysroot "/lib/rustlib/src/rust/library"))
+              (src-path (concat sysroot "/lib/rustlib/src/rust/src")))
+        (or (when (file-exists-p lib-path) lib-path)
+            (when (file-exists-p src-path) src-path))))
