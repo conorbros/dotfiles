@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export NODE_OPTIONS:\x2d\x2dopenssl\x2dlegacy\x2dprovider
 SETUVAR --export OPENSSL_DIR:/etc/ssl
 SETUVAR __fish_initialized:3400
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
